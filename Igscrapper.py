@@ -1,8 +1,4 @@
-import json
-import requests
-import os
-import os, sys
-sys.path.append(os.getcwd()+"/.lib/")
+import requests,os
 import argparse
 ap = argparse.ArgumentParser()
 ap.add_argument("-u", "--user", required=True, help="Enter User to Scan")
