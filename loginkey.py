@@ -1,5 +1,4 @@
-import os, sys
-sys.path.append(os.getcwd()+"/.lib/")
+import os
 import argparse
 ap = argparse.ArgumentParser()
 ap.add_argument("-k", "--key", required=True, help="key")
