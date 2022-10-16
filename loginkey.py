@@ -6,4 +6,4 @@ ap.add_argument("-k", "--key", required=True, help="key")
 args = vars(ap.parse_args())
 os.system("clear")
 if args['key']:
-	key_info(loginkey=args["key"])
+	loginkey=args["key"]
