@@ -14,14 +14,15 @@
 5. python3 Igscrapper.py -u \<username to scan\> <br/>
 
 
-<h1>**How to Use With Python3**</h1><br/>
+<h1>**How to Use With BASH**</h1><br/>
 1. sudo apt install git<br/>
-2. sudo apt install python3<br/>
-3. git clone https://github.com/GivenBY/Igscrapper <br/>
-4. cd Igscrapper<br/>
-5. chmod +x igscrapper.sh <br/>
-6. ./igscrapper.sh username
+2. git clone https://github.com/GivenBY/Igscrapper <br/>
+3. cd Igscrapper<br/>
+4. chmod +x igscrapper.sh <br/>
+5. ./igscrapper.sh username
 
+
+<p align="center"><img width="600"  src="https://user-images.githubusercontent.com/58392509/196050084-294b0324-ba61-4c0e-a97e-af0b598b70eb.png"></p>
 
 
 
