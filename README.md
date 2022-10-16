@@ -11,7 +11,7 @@
 2. sudo apt install python3<br/>
 3. git clone https://github.com/GivenBY/Igscrapper <br/>
 4. cd Igscrapper<br/>
-5. python3 Igscrapper.py -u \<username to scan\> <br/>
+5. python3 Igscrapper.py -u username <br/>
 
 
 <h1>**How to Use With Python3**</h1><br/>
