@@ -19,7 +19,7 @@ if args['user']:
 		userid=a['data']
 	else:
 		print("Connection Failed")
-print(userid)
+
 # To Download Profile picture
 def profile_picture(username):
 	url =f"https://instagram188.p.rapidapi.com/userphoto/{username}"
@@ -51,7 +51,8 @@ def Contact_details():
 	print("Longitude : >> ",res['data']['user']['longitude'])
 
 print("Profile Picture {:>8}".format("p"))
-print("Contact Info {:>8}".format("i"))
+print("Contact Info {:>11}".format("i"))
+print("Contact Details {:>11}".format("c"))
 loop=True
 while loop :
 	command=input("Enter Commands >> ")
@@ -59,6 +60,8 @@ while loop :
 		profile_picture(username)
 	elif command=="i":
 		Contact_info(userid)
+	elif command=="c":
+		Contact_details(userid)
 	elif command=="q":
 		loop=False
 	else:
