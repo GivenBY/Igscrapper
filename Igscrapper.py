@@ -1,5 +1,6 @@
 import requests,os
 import argparse
+import json as js
 import urllib.request
 ap = argparse.ArgumentParser()
 ap.add_argument("-u", "--user", required=True, help="Enter User to Scan")
@@ -18,7 +19,7 @@ if args['user']:
 		userid=a['data']
 	else:
 		print("Connection Failed")
-
+print(userid)
 # To Download Profile picture
 def profile_picture(username):
 	url =f"https://instagram188.p.rapidapi.com/userphoto/{username}"
@@ -30,10 +31,12 @@ def profile_picture(username):
 # To See Contact Info 
 def Contact_info(userid):
 	url = f"https://instagram188.p.rapidapi.com/usercontact/{userid}"
-	response = requests.request("GET", url,headers=headers)
 	res=response.json()
-	for key,value in res['data']['user']:
-		print(key,value)
+	sub=res['data']['user']
+	while "biography_with_entities" in sub:
+		sub.popitem()
+	pretty = js.dumps(sub, indent=4)
+	print(pretty)
 
 print("Profile Picture {:>8}".format("p"))
 print("Contact Info {:>8}".format("i"))
