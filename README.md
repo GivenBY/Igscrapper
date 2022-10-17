@@ -19,9 +19,9 @@
 2. sudo apt install jq<br/>
 3. git clone https://github.com/GivenBY/Igscrapper <br/>
 4. cd Igscrapper<br/>
-5. nano igscrapper.sh and Enter Your Key
-5. chmod +x igscrapper.sh <br/>
-6. ./igscrapper.sh username
+5. nano igscrapper.sh and Enter Your Key<br/>
+6. chmod +x igscrapper.sh <br/>
+7. ./igscrapper.sh username
 
 
 <p align="center"><img width="497" alt="Screenshot 2022-10-17 at 10 58 17 PM" src="https://user-images.githubusercontent.com/58392509/196243792-cf06cbc4-0391-471a-a388-9f4c27d4095a.png"></p>
