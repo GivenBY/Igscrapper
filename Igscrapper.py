@@ -9,7 +9,7 @@ os.system("clear")
 loginkey=input("Enter Key Generated From Rapid Api: ")
 if args['user']:
 	username=args["user"]
-	print("Connectiong to Server:")
+	print("Connecting to Server:")
 	url = f"https://instagram188.p.rapidapi.com/userid/{username}"
 	headers = {"X-RapidAPI-Key": f"{loginkey}","X-RapidAPI-Host": "instagram188.p.rapidapi.com"}
 	response = requests.request("GET", url,headers=headers)
@@ -40,7 +40,7 @@ def Contact_info(userid):
 	print(pretty)
 
 # To see Contact details
-def Contact_details():
+def Contact_details(userid):
 	url = f"https://instagram188.p.rapidapi.com/usercontact/{userid}"
 	response = requests.request("GET", url,headers=headers)
 	res=response.json()
@@ -50,9 +50,9 @@ def Contact_details():
 	print("Latitude : >> ",res['data']['user']['latitude'])
 	print("Longitude : >> ",res['data']['user']['longitude'])
 
-print("Profile Picture {:>8}".format("p"))
-print("Contact Info {:>11}".format("i"))
-print("Contact Details {:>11}".format("c"))
+print("Profile Picture {:>12}".format("p"))
+print("Contact Info {:>15}".format("i"))
+print("Contact Details {:>12}".format("c"))
 loop=True
 while loop :
 	command=input("Enter Commands >> ")
