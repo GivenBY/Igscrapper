@@ -31,6 +31,7 @@ def profile_picture(username):
 # To See Contact Info 
 def Contact_info(userid):
 	url = f"https://instagram188.p.rapidapi.com/usercontact/{userid}"
+	response = requests.request("GET", url,headers=headers)
 	res=response.json()
 	sub=res['data']['user']
 	while "biography_with_entities" in sub:
