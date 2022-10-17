@@ -40,15 +40,16 @@ def Contact_info(userid):
 	print(pretty)
 
 # To see Contact details
-def Contact_details(userid):
-	url = f"https://instagram188.p.rapidapi.com/usercontact/{userid}"
-	response = requests.request("GET", url,headers=headers)
-	res=response.json()
-	print("Country Code : >> ",res['data']['user']['public_phone_country_code'])
-	print("Phone Number : >> ",res['data']['user']['public_phone_number'])
-	print("zip Code : >> ",res['data']['user']['zip'])
-	print("Latitude : >> ",res['data']['user']['latitude'])
-	print("Longitude : >> ",res['data']['user']['longitude'])
+# def Contact_details(userid):
+# 	url = f"https://instagram188.p.rapidapi.com/usercontact/{userid}"
+# 	response = requests.request("GET", url,headers=headers)
+# 	res=response.json()
+# 	print(res['data'])
+# 	print("Country Code : >> ",res['data']['user']['public_phone_country_code'])
+# 	print("Phone Number : >> ",res['data']['user']['public_phone_number'])
+# 	print("zip Code : >> ",res['data']['user']['zip'])
+# 	print("Latitude : >> ",res['data']['user']['latitude'])
+# 	print("Longitude : >> ",res['data']['user']['longitude'])
 
 print("Profile Picture {:>12}".format("p"))
 print("Contact Info {:>15}".format("i"))
@@ -60,8 +61,8 @@ while loop :
 		profile_picture(username)
 	elif command=="i":
 		Contact_info(userid)
-	elif command=="c":
-		Contact_details(userid)
+	# elif command=="c":
+	# 	Contact_details(userid)
 	elif command=="q":
 		loop=False
 	else:
