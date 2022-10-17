@@ -22,7 +22,7 @@
 5. ./igscrapper.sh username
 
 
-<p align="center"><img width="600"  src="https://user-images.githubusercontent.com/58392509/196050084-294b0324-ba61-4c0e-a97e-af0b598b70eb.png"></p>
+<p align="center"><img width="497" alt="Screenshot 2022-10-17 at 10 58 17 PM" src="https://user-images.githubusercontent.com/58392509/196243792-cf06cbc4-0391-471a-a388-9f4c27d4095a.png"></p>
 
 
 
