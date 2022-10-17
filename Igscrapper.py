@@ -39,6 +39,17 @@ def Contact_info(userid):
 	pretty = js.dumps(sub, indent=4)
 	print(pretty)
 
+# To see Contact details
+def Contact_details():
+	url = f"https://instagram188.p.rapidapi.com/usercontact/{userid}"
+	response = requests.request("GET", url,headers=headers)
+	res=response.json()
+	print("Country Code : >> ",res['data']['user']['contact_phone_country_code'])
+	print("Phone Number : >> ",res['data']['user']['contact_phone_number'])
+	print("zip Code : >> ",res['data']['user']['zip'])
+	print("Latitude : >> ",res['data']['user']['latitude'])
+	print("Longitude : >> ",res['data']['user']['longitude'])
+
 print("Profile Picture {:>8}".format("p"))
 print("Contact Info {:>8}".format("i"))
 loop=True
