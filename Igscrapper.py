@@ -1,5 +1,6 @@
 import requests,os
 import argparse
+import json as js
 import urllib.request
 ap = argparse.ArgumentParser()
 ap.add_argument("-u", "--user", required=True, help="Enter User to Scan")
@@ -8,7 +9,7 @@ os.system("clear")
 loginkey=input("Enter Key Generated From Rapid Api: ")
 if args['user']:
 	username=args["user"]
-	print("Connectiong to Server:")
+	print("Connecting to Server:")
 	url = f"https://instagram188.p.rapidapi.com/userid/{username}"
 	headers = {"X-RapidAPI-Key": f"{loginkey}","X-RapidAPI-Host": "instagram188.p.rapidapi.com"}
 	response = requests.request("GET", url,headers=headers)
@@ -32,11 +33,27 @@ def Contact_info(userid):
 	url = f"https://instagram188.p.rapidapi.com/usercontact/{userid}"
 	response = requests.request("GET", url,headers=headers)
 	res=response.json()
-	for key,value in res['data']['user']:
-		print(key,value)
+	sub=res['data']['user']
+	while "biography_with_entities" in sub:
+		sub.popitem()
+	pretty = js.dumps(sub, indent=4)
+	print(pretty)
 
-print("Profile Picture {:>8}".format("p"))
-print("Contact Info {:>8}".format("i"))
+# To see Contact details
+# def Contact_details(userid):
+# 	url = f"https://instagram188.p.rapidapi.com/usercontact/{userid}"
+# 	response = requests.request("GET", url,headers=headers)
+# 	res=response.json()
+# 	print(res['data'])
+# 	print("Country Code : >> ",res['data']['user']['public_phone_country_code'])
+# 	print("Phone Number : >> ",res['data']['user']['public_phone_number'])
+# 	print("zip Code : >> ",res['data']['user']['zip'])
+# 	print("Latitude : >> ",res['data']['user']['latitude'])
+# 	print("Longitude : >> ",res['data']['user']['longitude'])
+
+print("Profile Picture {:>12}".format("p"))
+print("Contact Info {:>15}".format("i"))
+# print("Contact Details {:>12}".format("c"))
 loop=True
 while loop :
 	command=input("Enter Commands >> ")
@@ -44,6 +61,8 @@ while loop :
 		profile_picture(username)
 	elif command=="i":
 		Contact_info(userid)
+	# elif command=="c":
+	# 	Contact_details(userid)
 	elif command=="q":
 		loop=False
 	else:
