@@ -27,11 +27,11 @@ def profile_picture(username):
 	urllib.request.urlretrieve(a['data'],r'Output/profile_image.jpg')
 	print("Image Saved in Output Folder")
 
-
-print("Enter Commmands\nContact info : i\nProfile Photo : p\nQuit : q")
+print("Profile Picture {:>8}".format("p"))
+print("Contact Info {:>8}".format("i"))
 loop=True
 while loop :
-	command=input(">>")
+	command=input("Enter Commands >> ")
 	if command=="p":
 		profile_picture(username)
 	elif command=="i":
