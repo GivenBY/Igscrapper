@@ -16,10 +16,12 @@
 
 <h1>**How to Use With BASH**</h1><br/>
 1. sudo apt install git<br/>
-2. git clone https://github.com/GivenBY/Igscrapper <br/>
-3. cd Igscrapper<br/>
-4. chmod +x igscrapper.sh <br/>
-5. ./igscrapper.sh username
+2. sudo apt install jq<br/>
+3. git clone https://github.com/GivenBY/Igscrapper <br/>
+4. cd Igscrapper<br/>
+5. nano igscrapper.sh and Enter Your Key
+5. chmod +x igscrapper.sh <br/>
+6. ./igscrapper.sh username
 
 
 <p align="center"><img width="497" alt="Screenshot 2022-10-17 at 10 58 17 PM" src="https://user-images.githubusercontent.com/58392509/196243792-cf06cbc4-0391-471a-a388-9f4c27d4095a.png"></p>
