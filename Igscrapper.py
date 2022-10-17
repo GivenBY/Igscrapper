@@ -44,8 +44,8 @@ def Contact_details(userid):
 	url = f"https://instagram188.p.rapidapi.com/usercontact/{userid}"
 	response = requests.request("GET", url,headers=headers)
 	res=response.json()
-	print("Country Code : >> ",res['data']['user']['contact_phone_country_code'])
-	print("Phone Number : >> ",res['data']['user']['contact_phone_number'])
+	print("Country Code : >> ",res['data']['user']['public_phone_country_code'])
+	print("Phone Number : >> ",res['data']['user']['public_phone_number'])
 	print("zip Code : >> ",res['data']['user']['zip'])
 	print("Latitude : >> ",res['data']['user']['latitude'])
 	print("Longitude : >> ",res['data']['user']['longitude'])
