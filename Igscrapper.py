@@ -53,6 +53,7 @@ def Contact_info(userid):
 
 print("Profile Picture {:>12}".format("p"))
 print("Contact Info {:>15}".format("i"))
+print("Quit {:>23}".format("q"))
 # print("Contact Details {:>12}".format("c"))
 loop=True
 while loop :
