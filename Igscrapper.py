@@ -23,9 +23,17 @@ if args['user']:
 def profile_picture(username):
 	url =f"https://instagram188.p.rapidapi.com/userphoto/{username}"
 	response = requests.request("GET", url,headers=headers)
-	a=response.json()
-	urllib.request.urlretrieve(a['data'],r'Output/profile_image.jpg')
+	res=response.json()
+	urllib.request.urlretrieve(res['data'],r'Output/profile_image.jpg')
 	print("Image Saved in Output Folder")
+
+# To See Contact Info 
+def Contact_info(userid):
+	url = f"https://instagram188.p.rapidapi.com/usercontact/{userid}"
+	response = requests.request("GET", url,headers=headers)
+	res=response.json()
+	for key,value in res['data']['user']:
+		print(key,value)
 
 print("Profile Picture {:>8}".format("p"))
 print("Contact Info {:>8}".format("i"))
@@ -35,7 +43,7 @@ while loop :
 	if command=="p":
 		profile_picture(username)
 	elif command=="i":
-		pass
+		Contact_info(userid)
 	elif command=="q":
 		loop=False
 	else:
