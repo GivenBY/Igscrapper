@@ -2,7 +2,7 @@
 #!/bin/bash
 
 KEY='ENTER YOUR API KEY'
-
+command -v jq > /dev/null 2>&1 || { echo >&2 "I require jq but it's not installed. Install it. Aborting. ";echo "sudo apt install jq"; exit 1; }
 
 #UserID
 A=$(curl --request GET 	--url https://instagram188.p.rapidapi.com/userid/$1 --header 'X-RapidAPI-Host: instagram188.p.rapidapi.com' --header "X-RapidAPI-Key: $KEY")
