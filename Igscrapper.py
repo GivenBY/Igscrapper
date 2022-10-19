@@ -9,6 +9,14 @@ os.system("clear")
 loginkey=input("Enter Key Generated From Rapid Api: ")
 if args['user']:
 	username=args["user"]
+        print(' ###                                                                   
+  #   ####   ####   ####  #####    ##   #####  #####  ###### #####     
+  #  #    # #      #    # #    #  #  #  #    # #    # #      #    #    
+  #  #       ####  #      #    # #    # #    # #    # #####  #    #    
+  #  #  ###      # #      #####  ###### #####  #####  #      #####     
+  #  #    # #    # #    # #   #  #    # #      #      #      #   #     
+ ###  ####   ####   ####  #    # #    # #      #      ###### #    #    
+                                                                       ')
 	print("Connecting to Server:")
 	url = f"https://instagram188.p.rapidapi.com/userid/{username}"
 	headers = {"X-RapidAPI-Key": f"{loginkey}","X-RapidAPI-Host": "instagram188.p.rapidapi.com"}
