@@ -3,23 +3,24 @@ import json as js
 import urllib.request
 username=input("Enter UserName Of the Target:  ")
 loginkey=input("Enter Key Generated From Rapid Api: ")
-	print('''
- __    _______      _______.  ______ .______          ___      .______   .______    _______ .______      
-|  |  /  _____|    /       | /      ||   _  \        /   \     |   _  \  |   _  \  |   ____||   _  \     
-|  | |  |  __     |   (----`|  ,----'|  |_)  |      /  ^  \    |  |_)  | |  |_)  | |  |__   |  |_)  |    
-|  | |  | |_ |     \   \    |  |     |      /      /  /_\  \   |   ___/  |   ___/  |   __|  |      /     
-|  | |  |__| | .----)   |   |  `----.|  |\  \----./  _____  \  |  |      |  |      |  |____ |  |\  \----.
-|__|  \______| |_______/     \______|| _| `._____/__/     \__\ | _|      | _|      |_______|| _| `._____|''')
-	print("Connecting to Server:")
-	url = f"https://instagram188.p.rapidapi.com/userid/{username}"
-	headers = {"X-RapidAPI-Key": f"{loginkey}","X-RapidAPI-Host": "instagram188.p.rapidapi.com"}
-	response = requests.request("GET", url,headers=headers)
-	a=response.json()
-	if a['success']==True:
-		print("Connection Successful")
-		userid=a['data']
-	else:
-		print("Connection Failed")
+print('''
+	 __    _______      _______.  ______ .______          ___      .______   .______    _______ .______      
+	|  |  /  _____|    /       | /      ||   _  \        /   \     |   _  \  |   _  \  |   ____||   _  \     
+	|  | |  |  __     |   (----`|  ,----'|  |_)  |      /  ^  \    |  |_)  | |  |_)  | |  |__   |  |_)  |    
+	|  | |  | |_ |     \   \    |  |     |      /      /  /_\  \   |   ___/  |   ___/  |   __|  |      /     
+	|  | |  |__| | .----)   |   |  `----.|  |\  \----./  _____  \  |  |      |  |      |  |____ |  |\  \----.
+	|__|  \______| |_______/     \______|| _| `._____/__/     \__\ | _|      | _|      |_______|| _| `._____|
+	''')
+print("Connecting to Server:")
+url = f"https://instagram188.p.rapidapi.com/userid/{username}"
+headers = {"X-RapidAPI-Key": f"{loginkey}","X-RapidAPI-Host": "instagram188.p.rapidapi.com"}
+response = requests.request("GET", url,headers=headers)
+a=response.json()
+if a['success']==True:
+	print("Connection Successful")
+	userid=a['data']
+else:
+	print("Connection Failed")
 
 # To Download Profile picture
 def profile_picture(username):
@@ -39,6 +40,16 @@ def Contact_info(userid):
 		sub.popitem()
 	pretty = js.dumps(sub, indent=4)
 	print(pretty)
+
+def Contact_info(userid):
+	url = f"https://instagram188.p.rapidapi.com/usercontact/{userid}"
+	response = requests.request("GET", url,headers=headers)
+	res=response.json()
+	sub=res['data']['user']
+	for keys,values in sub:
+		if keys=="biography_with_entities":
+			break
+		print(keys,values)
 
 # To see Contact details
 # def Contact_details(userid):
