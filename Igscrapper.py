@@ -1,22 +1,15 @@
 import requests,os
-import argparse
 import json as js
 import urllib.request
-ap = argparse.ArgumentParser()
-ap.add_argument("-u", "--user", required=True, help="Enter User to Scan")
-args = vars(ap.parse_args())
-os.system("clear")
+username=input("Enter UserName Of the Target:  ")
 loginkey=input("Enter Key Generated From Rapid Api: ")
-if args['user']:
-	username=args["user"]
-        print(' ###                                                                   
-  #   ####   ####   ####  #####    ##   #####  #####  ###### #####     
-  #  #    # #      #    # #    #  #  #  #    # #    # #      #    #    
-  #  #       ####  #      #    # #    # #    # #    # #####  #    #    
-  #  #  ###      # #      #####  ###### #####  #####  #      #####     
-  #  #    # #    # #    # #   #  #    # #      #      #      #   #     
- ###  ####   ####   ####  #    # #    # #      #      ###### #    #    
-                                                                       ')
+	print('''
+ __    _______      _______.  ______ .______          ___      .______   .______    _______ .______      
+|  |  /  _____|    /       | /      ||   _  \        /   \     |   _  \  |   _  \  |   ____||   _  \     
+|  | |  |  __     |   (----`|  ,----'|  |_)  |      /  ^  \    |  |_)  | |  |_)  | |  |__   |  |_)  |    
+|  | |  | |_ |     \   \    |  |     |      /      /  /_\  \   |   ___/  |   ___/  |   __|  |      /     
+|  | |  |__| | .----)   |   |  `----.|  |\  \----./  _____  \  |  |      |  |      |  |____ |  |\  \----.
+|__|  \______| |_______/     \______|| _| `._____/__/     \__\ | _|      | _|      |_______|| _| `._____|''')
 	print("Connecting to Server:")
 	url = f"https://instagram188.p.rapidapi.com/userid/{username}"
 	headers = {"X-RapidAPI-Key": f"{loginkey}","X-RapidAPI-Host": "instagram188.p.rapidapi.com"}
